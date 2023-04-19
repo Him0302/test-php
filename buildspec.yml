@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+ install:
+   commands:
+     - sudo apt update
+     - sudo apt install apache2 -y
+     - sudo apt install mysql-server -y
+     - sudo apt install php libapache2-mod-php php-mysql -y
+     - 
+ build:
+   commands:
+     - echo Build started on `date`
+     - echo Installing composer deps
+     - cp web/index.php /var/www/html/web/index.php
+
+ post_build:
+   commands:
+     - echo Build completed on `date`
+     # Do you need to do this? In many cases phpunit will use sqllite or similar to avoid the need for a real DB.
+     # If you don't need it delete it
+     # - /usr/bin/mysql  -u root -e "GRANT ALL ON *.* TO 'test'@'localhost' IDENTIFIED BY '' WITH GRANT OPTION"
+     # - mysqladmin -u test create test
+
+ artifacts:
+  files:
+    - /var/www/html/index.php     
