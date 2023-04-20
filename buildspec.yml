@@ -8,9 +8,6 @@ phases:
      - echo Nothing to do in the pre_build phase
  build:
    commands:
-     - echo Build started on `date`
-     - echo Installing composer deps
-     - pwd
      - cp web/index.php /var/www/html/web/
 
  post_build:
