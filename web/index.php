@@ -184,7 +184,7 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $tipos->num_rows; ?></div>
-                                    <div>hi Narendra</div>
+                                    <div>hi Himanshi</div>
                                 </div>
                             </div>
                         </div>
