@@ -4,14 +4,14 @@ files:
   - source: /
     destination: /var/www/html/
 hooks:
-  BeforeInstall:
-    - location: aws-scripts/install_dependencies
+  AfterInstall:
+    - location: install_dependencies.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: aws-scripts/composer_install
+  ApplicationStart:
+    - location: start_apache.sh
       timeout: 300
-      runas: codedeployuser
-    - location: aws-scripts/unittests
-      timeout: 3600
-      runas: codedeployuser
+      runas: root     
+ 
+    
+
