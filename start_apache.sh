@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo systemctl start apache2
+sudo service apache2 restart
+sudo service codedeploy-agent restart
