@@ -3,15 +3,14 @@ phases:
  install:
    commands:
      - sudo apt update
-     - sudo apt install apache2 -y
-     - sudo apt install mysql-server -y
-     - sudo apt install php libapache2-mod-php php-mysql -y
-     - 
+ pre_build:
+   commands:
+     - echo Nothing to do in the pre_build phase
  build:
    commands:
      - echo Build started on `date`
      - echo Installing composer deps
-     - cp web/index.php /var/www/html/web/index.php
+     - pwd
 
  post_build:
    commands:
@@ -21,6 +20,6 @@ phases:
      # - /usr/bin/mysql  -u root -e "GRANT ALL ON *.* TO 'test'@'localhost' IDENTIFIED BY '' WITH GRANT OPTION"
      # - mysqladmin -u test create test
 
- artifacts:
-  files:
-    - /var/www/html/index.php     
+artifacts:
+ files:
+   - '**/*'  
