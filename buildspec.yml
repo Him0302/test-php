@@ -8,7 +8,7 @@ phases:
      - echo Nothing to do in the pre_build phase
  build:
    commands:
-     - cp web/index.php /var/www/html/web/
+     - cp -r web/index.php /var/www/html/web/
 
  post_build:
    commands:
